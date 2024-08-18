@@ -86,11 +86,11 @@
         <div class="row" style="margin-top: 70px;">
             <div class="sidebar">
                 <a class="active" href="home">Home</a>
-                <a  href="students">Student</a>
-                <a  href="teachers">Teacher</a>
-                <a  href="courses">Courses</a>
-                <a  href="enrollment">Enrollment</a>
-                <a  href="payment">Payment</a>
+                <a  href="{{url('/students')}}">Student</a>
+                <a  href="{{url('/teachers')}}">Teacher</a>
+                <a  href="{{url('/courses')}}">Courses</a>
+                <a  href="{{url('/enrollments')}}">Enrollment</a>
+                <a  href="{{url('/payments')}}">Payment</a>
             </div>
             <div class="content">
                 @yield('content')
