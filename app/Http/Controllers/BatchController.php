@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use App\Models\Batch;
+use App\Models\Course;
 use Faker\Provider\Base;
 use Illuminate\View\View;
 
@@ -26,8 +27,13 @@ class BatchController extends Controller
      */
     public function create(): View
     {
-        return view('batches.create');
+        $courses = Course::pluck('name','id');
+        return view('batches.create',compact('courses'));
+
+        // pluck => تقوم بجلب عمودين محددين من جدول البيانات
+        //  يقوم بجلب قائمة من الكورسات (الدورات التدريبية) من قاعدة البيانات، باستخدام نموذج Course
     }
+
 
     /**
      * Store a newly created resource in storage.

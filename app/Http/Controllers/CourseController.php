@@ -46,7 +46,7 @@ class CourseController extends Controller
             $courses = Course::find($id);
 
             if (!$courses) {
-                return redirect('students')->with('flash_message', 'Course not found!');
+                return redirect('courses')->with('flash_message', 'Course not found!');
             }
 
             return view('courses.show')->with('courses', $courses);

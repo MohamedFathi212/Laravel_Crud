@@ -24,6 +24,7 @@ class EnrollmentController extends Controller
      */
     public function create(): View
     {
+        
         return view('enrollments.create');
     }
 

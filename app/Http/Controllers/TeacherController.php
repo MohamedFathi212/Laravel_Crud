@@ -41,16 +41,15 @@ class TeacherController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id): View
-    {
-        $teachers = Teacher::find($id);
+    public function show($id): View
+{
+    $teacher = Teacher::find($id);
 
-        if (!$teachers) {
-            return redirect('students')->with('flash_message', 'Teacher not found!');
-        }
-
-        return view('students.show')->with('student', $teachers);
+    if (!$teacher) {
+        return redirect('teachers')->with('flash_message', 'Teacher not found!');
     }
+    return view('teachers.show')->with('teacher', $teacher);
+}
 
     /**
      * Show the form for editing the specified resource.
